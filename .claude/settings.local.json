@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:maxslobodyan.com)",
+      "Bash(cp \"G:/ІСПАНІЯ І УКРАЇНЦІ/2024/!!!!Відгуки/Reseñas Отзывы/\"*.jpg \"D:/MY WEB/max-slobodian-com/SiteAI/assets/reviews/\")",
+      "Bash(cp \"G:/ІСПАНІЯ І УКРАЇНЦІ/2024/!!!!Відгуки/Reseñas Отзывы/\"*.png \"D:/MY WEB/max-slobodian-com/SiteAI/assets/reviews/\")",
+      "mcp__Claude_Preview__preview_start"
+    ]
+  }
+}
