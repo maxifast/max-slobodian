@@ -549,11 +549,13 @@ button {
 
 .hero-title {
     font-family: var(--font-heading);
-    font-size: clamp(42px, 5vw, 88px);
+    font-size: clamp(38px, 3.8vw, 62px);
     font-weight: 700;
-    line-height: 1.05;
+    line-height: 1.1;
     letter-spacing: -0.03em;
     margin-bottom: 20px;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .hero-subtitle {
@@ -1398,9 +1400,54 @@ button {
     color: var(--accent-light);
 }
 
+.program-single {
+    display: flex;
+    flex-direction: column;
+}
+
+.program-footer {
+    margin-top: 32px;
+    padding-top: 28px;
+    border-top: 1px solid var(--border);
+}
+
+.program-footer-text {
+    font-size: 15px;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+.program-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.program-actions .btn {
+    flex: 1;
+    min-width: 160px;
+    justify-content: center;
+}
+
+.btn-featured {
+    background: linear-gradient(135deg, #6C5CE7 0%, #A29BFE 50%, #74B9FF 100%);
+    box-shadow: 0 8px 32px rgba(108, 92, 231, 0.35);
+}
+
 @media (max-width: 768px) {
     .program-grid {
         grid-template-columns: 1fr;
+    }
+
+    .program-actions {
+        flex-direction: column;
+    }
+
+    .program-actions .btn {
+        min-width: 0;
+        flex: none;
+        width: 100%;
     }
 }
 
