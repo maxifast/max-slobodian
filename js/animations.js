@@ -58,7 +58,7 @@
         });
     }
 
-    // ── Smooth scroll for nav links ────────────
+    // ── Smooth scroll for anchor links ────────────
     document.querySelectorAll('a[href^="#"]').forEach(function (link) {
         link.addEventListener('click', function (e) {
             var targetId = this.getAttribute('href');
@@ -66,11 +66,9 @@
             var target = document.querySelector(targetId);
             if (target) {
                 e.preventDefault();
-                gsap.to(window, {
-                    scrollTo: { y: target, offsetY: 60 },
-                    duration: 1,
-                    ease: 'power2.inOut'
-                });
+                var offsetY = 70;
+                var top = target.getBoundingClientRect().top + window.pageYOffset - offsetY;
+                window.scrollTo({ top: top, behavior: 'smooth' });
             }
         });
     });

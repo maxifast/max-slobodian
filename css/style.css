@@ -1132,6 +1132,9 @@ button {
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
     margin-bottom: 48px;
+    align-items: start;
+    padding-top: 16px;
+    padding-bottom: 16px;
 }
 
 .consult-card {
@@ -1152,8 +1155,32 @@ button {
 }
 
 .consult-card-featured {
-    border-color: rgba(139, 127, 255, 0.3);
-    background: linear-gradient(180deg, rgba(108, 92, 231, 0.08) 0%, var(--bg-card) 50%);
+    border-color: rgba(139, 127, 255, 0.55);
+    background: linear-gradient(180deg, rgba(108, 92, 231, 0.18) 0%, rgba(108, 92, 231, 0.06) 60%, var(--bg-card) 100%);
+    box-shadow: 0 0 0 1px rgba(139, 127, 255, 0.3), 0 20px 60px rgba(108, 92, 231, 0.22);
+    transform: translateY(-12px) scale(1.03);
+    position: relative;
+    z-index: 2;
+}
+
+.consult-card-featured::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(139,127,255,0.6) 0%, rgba(116,185,255,0.4) 50%, rgba(139,127,255,0.2) 100%);
+    z-index: -1;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    padding: 1px;
+    border-radius: var(--radius-lg);
+}
+
+.consult-card-featured:hover {
+    transform: translateY(-18px) scale(1.03);
+    box-shadow: 0 0 0 1px rgba(139, 127, 255, 0.5), 0 32px 80px rgba(108, 92, 231, 0.35);
 }
 
 .consult-card-badge {
@@ -1173,6 +1200,13 @@ button {
     background: var(--gradient-primary);
     border: none;
     color: #fff;
+    box-shadow: 0 4px 16px rgba(108, 92, 231, 0.5);
+    animation: badge-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes badge-pulse {
+    0%, 100% { box-shadow: 0 4px 16px rgba(108, 92, 231, 0.5); }
+    50% { box-shadow: 0 4px 28px rgba(108, 92, 231, 0.85); }
 }
 
 .consult-card-icon {
