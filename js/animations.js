@@ -14,12 +14,13 @@
         }
     }
 
-    window.addEventListener('load', function () {
-        setTimeout(hidePreloader, 2500);
+    // Hide as soon as DOM + critical resources are ready
+    document.addEventListener('DOMContentLoaded', function () {
+        setTimeout(hidePreloader, 600);
     });
 
-    // Safety-net fallback
-    setTimeout(hidePreloader, 4000);
+    // Safety-net fallback (in case DOMContentLoaded already fired)
+    setTimeout(hidePreloader, 1200);
 
 
     // ── Register GSAP plugins ──────────────────
